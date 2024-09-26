@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bet Tracker</title>
+</head>
+<body>
+
+    <h1>Bet Tracker</h1>
+
+    <!-- Form to add a new bet -->
+    <form action="/add_bet" method="POST">
+        <label for="odds">Odds:</label>
+        <input type="text" id="odds" name="odds" required>
+        <br><br>
+
+        <label for="stake">Stake ($):</label>
+        <input type="number" step="0.01" id="stake" name="stake" required>
+        <br><br>
+
+        <label for="return">Return ($):</label>
+        <input type="number" step="0.01" id="return" name="return" required>
+        <br><br>
+
+        <input type="submit" value="Add Bet">
+    </form>
+
+    <hr>
+
+    <h2>Bet Summary</h2>
+    <p>Average Bet Size: ${{ summary.avg_bet_size }}</p>
+    <p>Average Odds Taken: {{ summary.avg_odds }}</p>
+    <p>Win Percentage: {{ summary.win_percentage }}%</p>
+    <p>Total $ Win/Loss: ${{ summary.total_win_loss }}</p>
+
+    <hr>
+
+    <h2>All Bets</h2>
+    <table border="1">
+        <tr>
+            <th>Odds</th>
+            <th>Stake ($)</th>
+            <th>Return ($)</th>
+        </tr>
+        {% for bet in bets %}
+        <tr>
+            <td>{{ bet['odds'] }}</td>
+            <td>{{ bet['stake'] }}</td>
+            <td>{{ bet['return'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
