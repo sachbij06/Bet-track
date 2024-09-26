@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bet Tracker</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #b0c4de;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        /* Flexbox for layout */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .half-screen {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Vertical divider */
+        .vertical-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #2f2f2f;
+        }
+
+        .half-screen:first-child {
+            margin-right: 10px;
+        }
+
+        .half-screen h2 {
+            margin-bottom: 10px;
+            color: #b0c4de; /* Light steel blue */
+            text-align: center;
+        }
+
+        /* Style for WIN/LOSS tags */
+        .result-tag {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff; /* White text */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .result-tag.win {
+            background-color: #4CAF50; /* Green for Win */
+        }
+
+        .result-tag.loss {
+            background-color: #F44336; /* Red for Loss */
+        }
+
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the form horizontally */
+        }
+
+        label {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #b0c4de; /* Light steel blue */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Flexbox and vertical alignment for input blocks */
+        .input-block {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px; /* Spacing between input rows */
+            margin: 10px;
+        }
+
+        .input-block label {
+        text-align: center;  /* Center-align the text */
+        display: block;      /* Ensure the label takes up full width */
+        width: 100%;         /* Make sure it covers the entire width of the parent container */
+        }
+
+        /* Padding for the ADD BET button */
+        input[type="submit"] {
+            padding: 12px 30px; /* Add extra padding */
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4f4f4f;
+        }
+
+
+        .input-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 420px; /* Adjust as needed */
+        }
+        .input-row label, 
+        .input-row input {
+            flex: 1;
+            margin-right: 10px; /* Adds space between fields */
+            justify-content: space-between;
+            align-items: center;
+        }
+        .input-row input:last-child {
+            margin-right: 0;
+        }
+
+
+        /* Add padding to the input fields */
+        input[type="text"],
+        input[type="number"],
+        select {
+            background-color: #1f1f1f; /* Darker gray background */
+            border: 1px solid #333; /* Subtle darker gray border */
+            color: #ffffff; /* White text */
+            padding: 10px 15px; /* Add padding */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        input[type="submit"] {
+            background-color: #333; /* Darker gray for button */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4f4f4f; /* Slightly lighter gray on hover */
+        }
+
+        /* Button toggle styling */
+        .toggle-win-loss {
+            display: flex;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 200px;
+        }
+
+        .toggle-win-loss button {
+            flex: 1;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #1f1f1f; /* Dark gray background */
+            border: none;
+            color: #ffffff; /* White text */
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-win-loss button:hover {
+            background-color: #4f4f4f; /* Slightly lighter gray on hover */
+        }
+
+        .toggle-win-loss button.active {
+            background-color: #003366; /* Dark blue for active state */
+            color: #ffffff;
+        }
+
+        /* Flex container for toggle and return on the same line */
+        .return-toggle-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 420px; /* Adjusted to fit both elements */
+        }
+
+        /* Return input styling with dynamic color */
+        .return-input {
+            flex: 1;
+            background-color: #1f1f1f; /* Default dark gray background */
+            border: 1px solid #333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        .return-win {
+            background-color: #003366; /* Dark blue for win */
+        }
+
+        .return-loss {
+            background-color: #660000; /* Dark red for loss */
+        }
+
+        /* Bet Summary */
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .summary-box {
+            background-color: #1f1f1f; /* Dark gray */
+            border: 1px solid #333; /* Subtle dark border */
+            border-radius: 10px;
+            padding: 20px;
+            width: 25%; /* Shrink the boxes to fit 3 side by side */
+            margin-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        .summary-box h3 {
+            color: #b0c4de; /* Light steel blue */
+            margin-bottom: 5px;
+        }
+
+        .summary-box p {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /* Table styling for bets */
+        .bets-table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        th {
+            background-color: #003366; /* Dark blue */
+            color: #ffffff; /* White text */
+            font-size: 18px;
+        }
+
+        td {
+            background-color: #1f1f1f; /* Dark gray */
+            color: #ffffff;
+        }
+
+        /* All Bets Table Hover */
+        td:hover {
+            background-color: #333; /* Lighter gray on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Bet Tracker</h1>
+
+    <hr style="background-color: #2f2f2f">
+
+    <div class="container">
+
+        <div class="half-screen">
+            <h2>Add a New Bet</h2>
+            <form action="/add_bet" method="POST">
+
+
+                <div class="input-row">
+                    <div class="input-block">
+                        <label for="odds">Odds</label>
+                        <input type="text" id="odds" name="odds" required>
+                    </div>
+                    
+                    <div class="input-block">
+                        <label for="stake">Stake ($)</label>
+                        <input type="number" step="0.01" id="stake" name="stake" min = "5.00" placeholder="5.00" required>
+                    </div>
+                </div>
+
+
+                <div class="return-toggle-container">
+
+                    <div class="toggle-win-loss">
+                        <button type="button" id="winButton" class="active" onclick="toggleWinLoss(true)">Win</button>
+                        <button type="button" id="lossButton" onclick="toggleWinLoss(false)">Loss</button>
+                    </div>
+
+                    <div class="input-block">
+                        <input type="number" step="0.01" id="return" name="return" class="return-input return-win" placeholder="0.00" readonly required>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-block">
+                        <label for="over_under">Over/Under</label>
+                        <select id="over_under" name="over_under" required>
+                            <option value="" disabled selected>Select</option> <!-- Empty default -->
+                            <option value="Over">Over</option>
+                            <option value="Under">Under</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-block">
+                        <label for="play_type">Play Type</label>
+                        <select id="play_type" name="play_type" required>
+                            <option value="" disabled selected>Select</option> <!-- Empty default -->
+                            <option value="Passing Yards">Passing Yards</option>
+                            <option value="Receiving Yards">Receiving Yards</option>
+                            <option value="Receptions">Receptions</option>
+                            <option value="Rushing Yards">Rushing Yards</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+
+                <input type="submit" value="Add Bet">
+            </form>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="half-screen">
+            <h2>Bet Summary</h2>
+            <div class="summary">
+
+                <div class="summary-box">
+                    <h3>Average Odds Taken</h3>
+                    <p>{{ "%.0f" % summary.avg_odds }}</p>
+                </div>
+                <div class="summary-box">
+                    <h3>Win Percentage</h3>
+                    <p>{{ "%.2f" % summary.win_percentage }}%</p>
+                </div>
+                <div class="summary-box">
+                    <h3>Total $ Win/Loss</h3>
+                    <p>${{ "%.2f" % summary.total_win_loss }}</p>
+                </div>
+                <div class="summary-box">
+                        <h3>Total Bets</h3>
+                        <p>{{ summary.total_bets }}</p>
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- All Bets Section -->
+    <h2>All Bets</h2>
+    <table class="bets-table">
+        <tr>
+            <th>Odds</th>
+            <th>Stake ($)</th>
+            <th>Return ($)</th>
+            <th>Result</th>
+            <th>Over/Under</th>
+            <th>Play Type</th>
+            
+        </tr>
+        {% for bet in bets %}
+        <tr>
+            <td>{{ bet['odds'] }}</td>
+            <td>{{ "%.2f" % bet['stake'] }}</td>
+            <td>{{ "%.2f" % bet['return'] }}</td>
+            <td>{{ bet['over_under'] }}</td>
+            <td>{{ bet['play_type'] }}</td>
+            <td>
+                <span class="result-tag {{ 'win' if bet['win_or_loss'] == 'WIN' else 'loss' }}">
+                    {{ bet['win_or_loss'] }}
+                </span>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</body>
+
+<script>
+    function toggleWinLoss(isWin) {
+        const stakeInput = document.getElementById('stake');
+        const oddsInput = document.getElementById('odds');
+        const returnInput = document.getElementById('return');
+
+        // Get values of stake and odds
+        const stake = parseFloat(stakeInput.value) || 0;
+        const odds = parseFloat(oddsInput.value) || 0;
+
+        if (isWin) {
+            // Calculate return based on odds (assuming American odds)
+            let returnAmount;
+            if (odds > 0) {
+                // Positive odds
+                returnAmount = stake * (1 + odds / 100);
+            } else {
+                // Negative odds
+                returnAmount = stake * (1 - 100 / odds);
+            }
+            returnInput.value = returnAmount.toFixed(2); // Set calculated return value
+            returnInput.classList.remove('return-loss');
+            returnInput.classList.add('return-win'); // Change background color to dark blue for win
+        } else {
+            returnInput.value = 0.00; // Set return to 0 in case of loss
+            returnInput.classList.remove('return-win');
+            returnInput.classList.add('return-loss'); // Change background color to dark red for loss
+        }
+
+        // Toggle button states
+        document.getElementById('winButton').classList.toggle('active', isWin);
+        document.getElementById('lossButton').classList.toggle('active', !isWin);
+    }
+</script>
+
+</html>
