@@ -435,16 +435,18 @@
             let returnAmount;
             if (odds > 0) {
                 // Positive odds
-                returnAmount = stake * (1 + odds / 100);
+                betMade = stake * (1 + odds / 100);
+                returnAmount = betMade - stake
             } else {
                 // Negative odds
-                returnAmount = stake * (1 - 100 / odds);
+                betMade = stake * (1 - 100 / odds);
+                returnAmount = betMade - stake
             }
             returnInput.value = returnAmount.toFixed(2); // Set calculated return value
             returnInput.classList.remove('return-loss');
             returnInput.classList.add('return-win'); // Change background color to dark blue for win
         } else {
-            returnInput.value = 0.00; // Set return to 0 in case of loss
+            returnInput.value = -stake; // Set return to 0 in case of loss
             returnInput.classList.remove('return-win');
             returnInput.classList.add('return-loss'); // Change background color to dark red for loss
         }

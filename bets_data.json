@@ -1,0 +1,258 @@
+[
+    {
+        "odds": -120,
+        "stake": 36.0,
+        "return": 30.0,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -154,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -109,
+        "stake": 7.50,
+        "return": 6.90,
+        "over_under": "Under",
+        "play_type": "Passing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 7.00,
+        "return": 6.16,
+        "over_under": "Under",
+        "play_type": "Passing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -115,
+        "stake": 7.00,
+        "return": -7.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -116,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -154,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -109,
+        "stake": 7.50,
+        "return": 6.90,
+        "over_under": "Under",
+        "play_type": "Passing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 7.00,
+        "return": 6.16,
+        "over_under": "Under",
+        "play_type": "Passing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -115,
+        "stake": 7.00,
+        "return": -7.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -116,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -116,
+        "stake": 10.00,
+        "return": -10.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -114,
+        "stake": 10.00,
+        "return": -10.00,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -125,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -114,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -135,
+        "stake": 7.50,
+        "return": 5.55,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -112,
+        "stake": 5.00,
+        "return": 4.45,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -122,
+        "stake": 5.00,
+        "return": 4.10,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 9.00,
+        "return": 7.92,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -120,
+        "stake": 5.00,
+        "return": 4.15,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 5.00,
+        "return": 4.40,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -112,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Under",
+        "play_type": "Passing Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -116,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -123,
+        "stake": 5.00,
+        "return": -5.00,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "LOSS"
+    },
+    {
+        "odds": -115,
+        "stake": 5.00,
+        "return": 4.35,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -135,
+        "stake": 5.00,
+        "return": 3.70,
+        "over_under": "Under",
+        "play_type": "Receptions",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -139,
+        "stake": 5.00,
+        "return": 3.60,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -149,
+        "stake": 6.00,
+        "return": 4.02,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -114,
+        "stake": 7.50,
+        "return": 6.60,
+        "over_under": "Over",
+        "play_type": "Receiving Yards",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -119,
+        "stake": 7.50,
+        "return": 6.30,
+        "over_under": "Over",
+        "play_type": "Receptions",
+        "win_or_loss": "WIN"
+    },
+    {
+        "odds": -118,
+        "stake": 5.00,
+        "return": 4.25,
+        "over_under": "Over",
+        "play_type": "Rushing Yards",
+        "win_or_loss": "WIN"
+    }
+]
